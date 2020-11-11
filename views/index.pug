@@ -1,0 +1,45 @@
+extends layout
+
+block story
+  a(href=`/${firstId}`) Back to the start
+  table(class="table__container")
+    tr
+      td 
+      td
+        if topSentence
+          a(href=`/story-update/${id}/story-top/${topSentence.id}`)= topSentence.sentence
+        else
+          form(method='POST' action=`/${id}/top-sentence`)
+            textarea(name="sentence" value='')
+            button(type="submit") Submit
+            span= topError
+      td 
+    tr
+      td
+        if leftSentence 
+          a(href=`/story-update/${id}/story-left/${leftSentence.id}`)= leftSentence.sentence
+        else
+          form(method='POST' action=`/${id}/left-sentence`)
+            textarea(name="sentence" value='')
+            button(type="submit") Submit
+            span= leftError
+      td= startingPoint
+      td
+        if rightSentence
+          a(href=`/story-update/${id}/story-right/${rightSentence.id}`)= rightSentence.sentence
+        else
+          form(method='POST' action=`/${id}/right-sentence`)
+            textarea(name="sentence" value='')
+            button(type="submit") Submit
+            span= rightError
+    tr
+      td 
+      td
+        if bottomSentence
+          a(href=`/story-update/${id}/story-bottom/${bottomSentence.id}`)=  bottomSentence.sentence
+        else
+          form(method='POST' action=`/${id}/bottom-sentence`)
+            textarea(name="sentence" value='')
+            button(type="submit") Submit
+            span= bottomError
+      td 

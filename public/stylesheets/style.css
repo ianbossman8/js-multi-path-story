@@ -1,0 +1,17 @@
+.table-container,
+th,
+td {
+  border: 1px solid black;
+}
+
+td {
+  height: 100px;
+  min-width: 200px;
+  max-width: 300px;
+  max-height: 150px;
+  overflow: scroll;
+}
+
+textarea[name='sentence'] + button[type='submit'] {
+  display: block;
+}
