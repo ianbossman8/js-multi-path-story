@@ -1,6 +1,7 @@
 const { firstKey, sentenciesStore } = require('../store/sentenciesStore')
 const { SENTENCE_POSITION } = require('../constant')
 
+// tidy up the store after unit tests
 exports.clean = function clean() {
   delete sentenciesStore[firstKey][SENTENCE_POSITION.TOP]
   delete sentenciesStore[firstKey][SENTENCE_POSITION.BOTTOM]

@@ -1,6 +1,7 @@
 const { SENTENCE_POSITION } = require('../../constant')
 const { getSentence, getFirstKey } = require('../../controllers/sentencies')
 
+// setence generator for the current journey
 function sentencesGenerator(key) {
   return {
     firstId: getFirstKey(),

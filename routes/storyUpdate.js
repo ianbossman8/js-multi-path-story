@@ -1,5 +1,4 @@
 const express = require('express')
-
 const { SENTENCE_POSITION } = require('../constant')
 const { storeUpdatedStory, isStoryStored } = require('../controllers/sentencies')
 const { sentencesGenerator } = require('./utils')
@@ -7,6 +6,7 @@ const { sentencesGenerator } = require('./utils')
 const router = express.Router()
 
 router.get('/:id/story-top/:topId', (req, res) => {
+  // check if the sentence id has been stored already in the store and do not re-update
   if (!isStoryStored(req.params.topId)) {
     storeUpdatedStory(req.params.topId, req.params.id, SENTENCE_POSITION.TOP)
   }
